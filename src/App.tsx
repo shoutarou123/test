@@ -1,6 +1,6 @@
-import React from 'react'
-import { MyProvider } from './MyProvider'
 import ChildComponent from './ChildComponent'
+import { MyProvider } from './MyProvider'
+
 
 export default function App() {
   return (

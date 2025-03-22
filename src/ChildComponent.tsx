@@ -1,20 +1,13 @@
-import React, { useContext } from 'react'
-import { MyContext } from './MyProvider'
-
-
+import { messageAtom } from './MyProvider'
+import { useAtom } from 'jotai'
 
 export default function ChildComponent() {
-  const context = useContext(MyContext)
-  if (!context) {
-    return null
-  }
-  
-  const { message, setMessage } = context
-  
+  const [message, setMessage] = useAtom(messageAtom)
+
   return (
     <>
-    <div>{message}</div>
-    <button onClick={() => setMessage("さようなら")}>ボタン</button>
+      <div>{message}</div>
+      <button onClick={() => setMessage("こんにちは")}>ボタン</button>
     </>
   )
 }

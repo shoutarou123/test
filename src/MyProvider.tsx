@@ -1,19 +1,8 @@
-import React, { createContext, ReactNode, useState } from 'react'
+import { atom } from 'jotai'
+import { ReactNode } from 'react';
 
-type MyContextType = {
-  message: string;
-  setMessage: React.Dispatch<React.SetStateAction<string>>;
+export const messageAtom = atom("おはよう");
+
+export const MyProvider = ({ children } : { children: ReactNode }) => {
+  return <>{children}</>
 }
-
-export const MyContext = createContext<MyContextType | null>(null);
-
-export const MyProvider = ({ children }: { children: ReactNode}) => {
-  const [message, setMessage] = useState<string>("こんにちは");
-
-  return (
-    <MyContext.Provider value={{ message, setMessage }}>
-      {children}
-    </MyContext.Provider>
-  )
-}
-
