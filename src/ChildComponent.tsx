@@ -1,13 +1,14 @@
-import { messageAtom } from './MyProvider'
+import { messageAtom, setMessageAtom } from './MyProvider'
 import { useAtom } from 'jotai'
 
 export default function ChildComponent() {
-  const [message, setMessage] = useAtom(messageAtom)
+  const [message] = useAtom(messageAtom);
+  const [hoge,setHoge] = useAtom(setMessageAtom);
 
   return (
     <>
       <div>{message}</div>
-      <button onClick={() => setMessage("こんにちは")}>ボタン</button>
+      <button onClick={() => setHoge("こんにちは")}>ボタン</button>
     </>
   )
 }

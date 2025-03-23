@@ -52,3 +52,8 @@ export default tseslint.config({
   },
 })
 ```
+
+// atom 第一引数は状態の初期値、第二引数が更新関数でこれはgetとsetを受け取る。getはatomの状態を取る、setはatomの状態を更新する。
+// 更にsetも第一引数と第二引数に分かれ、第一引数には値を変えたいatomを指定し、第2引数には更新するための値をを入れる。
+
+<!-- useAtomValue, useSetAtomはコンポーネント内で使用するフックであり、エクスポートできない -->
